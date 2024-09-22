@@ -82,10 +82,10 @@ app.layout = html.Div([
             ],
             editable=True,
             dropdown={
-                'Crew':{
+                'Team':{
                     'options':[
                         {'label':i,'value':i}
-                        for i in df['Crew'].unique()
+                        for i in df['Team'].unique()
                     ],
                 }
             },
