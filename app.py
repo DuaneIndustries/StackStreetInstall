@@ -12,7 +12,7 @@ import io
 import requests
 from datetime import datetime, timedelta
 
-url='https://raw.githubusercontent.com/DuaneIndustries/StackStreetInstall/refs/heads/main/StackStreetProject_v2.csv'
+url='https://raw.githubusercontent.com/DuaneIndustries/StackStreetInstall/refs/heads/main/StackStreetProject_v3.csv'
 s=requests.get(url).content
 df=pd.read_csv(io.StringIO(s.decode('utf-8')))
 
@@ -170,7 +170,7 @@ def update_gantt(all_rows_data, slctd_row_indices, slct_rows_names, slctd_rows,
             x_start="Start Date",
             x_end="End Date",
             y="Project",
-            color='Team',
+            color='Project Section',
             hover_name='Task',
             hover_data={'Team':True,'Project':True,'Pattern':False,'Completion PCT':True,'Task':False},
             category_orders={"Project": ["Pre Install","Holiday","Afterburner","Roaster","K Cup Machine"]},
