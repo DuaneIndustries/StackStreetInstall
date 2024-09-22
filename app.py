@@ -12,7 +12,7 @@ import io
 import requests
 from datetime import datetime, timedelta
 
-url='https://raw.githubusercontent.com/DuaneIndustries/StackStreetInstall/refs/heads/main/StackStreetProject_v3.csv'
+url='https://raw.githubusercontent.com/DuaneIndustries/StackStreetInstall/refs/heads/main/StackStreetProject_v4.csv'
 s=requests.get(url).content
 df=pd.read_csv(io.StringIO(s.decode('utf-8')))
 
