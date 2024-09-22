@@ -12,7 +12,7 @@ import io
 import requests
 from datetime import datetime, timedelta
 
-url='https://raw.githubusercontent.com/DuaneIndustries/DCOschedule/main/DCO_2024_Calendar_v20.csv'
+url='https://raw.githubusercontent.com/DuaneIndustries/StackStreetInstall/refs/heads/main/StackStreetProject_v1.csv'
 s=requests.get(url).content
 df=pd.read_csv(io.StringIO(s.decode('utf-8')))
 
@@ -46,11 +46,11 @@ server=app.server
 
 
 app.layout = html.Div([
-    html.H1('Duane & Company Schedule', style={'color': 'green', 'fontSize': 40,'textAlign': 'center'}),
+    html.H1('Stack Street Installation Schedule', style={'color': 'red', 'fontSize': 40,'textAlign': 'center'}),
     html.Div(children=[
         dcc.Dropdown([x for x in sorted(dff['Project'].unique())],
                               value=[],
-                             placeholder = "Select a project",
+                             placeholder = "Select project segment",
                              clearable=False,
                              multi=True,
                              style={'width':'65%'},
