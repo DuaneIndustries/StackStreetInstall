@@ -61,9 +61,9 @@ app.layout = html.Div([
             end_date="2024-12-31",
             style={'display': 'inline-block', 'float': 'right'}
         ),
-        dcc.Dropdown([x for x in sorted(dff['Crew'].unique())],
+        dcc.Dropdown([x for x in sorted(dff['Team'].unique())],
                      value=[],
-                     placeholder = "Select a Crewmember",
+                     placeholder = "Select a Team",
                      clearable=False,
                      multi=True,
                      style={'width':'65%', 'margin-top': '10px' },
@@ -121,7 +121,7 @@ def update_table(section_value, crew_value, start_date, end_date):
 
     # Filter by crew
     if crew_value:
-        dff = dff[dff['Crew'].isin(crew_value)]
+        dff = dff[dff['Team'].isin(crew_value)]
 
     # Filter by date range
     if start_date and end_date:
@@ -172,7 +172,7 @@ def update_gantt(all_rows_data, slctd_row_indices, slct_rows_names, slctd_rows,
             y="Project",
             color='Task',
             hover_name='Task',
-            hover_data={'Crew':True,'Project':True,'Pattern':False,'Completion PCT':True,'Task':False},
+            hover_data={'Team':True,'Project':True,'Pattern':False,'Completion PCT':True,'Task':False},
             category_orders={"Project": ["White", "Stack Street", "Cadillac", "Tierra Farm"]},
             color_continuous_scale='algae',
             color_continuous_midpoint=50,
